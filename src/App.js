@@ -1,10 +1,14 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import Layout from './components/layout/Layout'
+import Carousel from './components/layout/Carousel'
 
 const App = () => {
   return (
-    <div>
-      <h1>Birthday Bash</h1>
-    </div>
+    <BrowserRouter>
+      <Layout />
+      <Carousel />
+    </BrowserRouter>
   )
 }
 
