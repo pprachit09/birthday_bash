@@ -1,13 +1,17 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import Layout from './components/layout/Layout'
-import Carousel from './components/layout/Carousel'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Parallax from './components/layout/Parallax'
+import Navbar from './components/layout/Navbar'
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Layout />
-      <Carousel />
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Parallax} />
+        </Switch>
+      </div>
     </BrowserRouter>
   )
 }

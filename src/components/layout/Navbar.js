@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Layout = () => {
+const Navbar = () => {
   return (
-    <nav>
+    <nav className="nav-wrapper blue">
       <div className="container">
         <div className="nav-wrapper">
           <Link to="/" className="brand-logo">Coderlust</Link>
@@ -17,4 +17,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default Navbar
