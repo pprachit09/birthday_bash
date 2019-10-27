@@ -10,19 +10,19 @@ const Carousel = () => {
   return (
     <div className="carousel">
       <Link to="#" className="carousel-item">
-        <img src="https://lorempixel.com/250/250/nature/1" alt="" />
+        <img src="/IMG-20191015-WA0004.jpg" className="responsive-img" alt="" />
       </Link>
       <Link to="#" className="carousel-item">
-        <img src="https://lorempixel.com/250/250/nature/2" alt=""/>
+        <img src="/IMG-20191015-WA0005.jpg" className="responsive-img" alt=""/>
       </Link>
       <Link to="#" className="carousel-item">
-        <img src="https://lorempixel.com/250/250/nature/3" alt=""/>
+        <img src="/IMG-20191015-WA0002.jpg" className="responsive-img" alt=""/>
       </Link>
       <Link to="#" className="carousel-item">
-        <img src="https://lorempixel.com/250/250/nature/4" alt=""/>
+        <img src="/IMG-20191015-WA0000.jpg" className="responsive-img" alt=""/>
       </Link>
       <Link to="#" className="carousel-item">
-        <img src="https://lorempixel.com/250/250/nature/5" alt=""/>
+        <img src="/IMG-20191004-WA0024.jpg" className="responsive-img" alt=""/>
       </Link>
     </div>
   )
