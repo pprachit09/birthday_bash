@@ -11,13 +11,13 @@ const Parallax = () => {
         </div>
       </div>
       <div className="container">
+        <Carousel />
         <h5 className="center-align">
           <Link to="/messages" className="pink-text text-lighten-1">
             check out your birthday messages
           </Link>
         </h5>
       </div>
-      <Carousel />
       <div className="parallax-container">
         <div className="parallax">
           <img src="/0_0Z5aWuFzUz7kAuwp.jpeg" alt="" />
