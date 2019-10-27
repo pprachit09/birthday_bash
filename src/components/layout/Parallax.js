@@ -1,5 +1,6 @@
 import React from 'react'
 import Carousel from './Carousel'
+import { Link } from 'react-router-dom'
 
 const Parallax = () => {
   return (
@@ -8,6 +9,13 @@ const Parallax = () => {
         <div className="parallax">
           <img src="/0_0Z5aWuFzUz7kAuwp.jpeg" alt="" />
         </div>
+      </div>
+      <div className="container">
+        <h5 className="center-align">
+          <Link to="/messages" className="pink-text text-lighten-1">
+            check out your birthday messages
+          </Link>
+        </h5>
       </div>
       <Carousel />
       <div className="parallax-container">
