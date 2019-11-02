@@ -4,6 +4,7 @@ import Parallax from './components/layout/Parallax'
 import Navbar from './components/layout/Navbar'
 import MessageList from './components/message/MessageList'
 import AddWish from './components/message/AddWish'
+import SingleMessage from './components/message/SingleMessage'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <main>
           <Switch>
             <Route exact path="/" component={Parallax} />
+            <Route exact path="/message/:id" component={SingleMessage} />
             <Route exact path="/messages" component={MessageList} />
             <Route exact path="/wish" component={AddWish} />
           </Switch>
