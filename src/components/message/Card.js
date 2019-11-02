@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Card = () => {
+const Card = ({ from, wish }) => {
   const colours = [
     'red',
     'pink',
@@ -18,15 +19,16 @@ const Card = () => {
   return (
     <div className={className}>
       <div className="card-content white-text">
-        <span className="card-title">From Prachit</span>
-        <p>
-          I am a very simple card. I am good at containing small bits of
-          information. I am convenient because I require little markup to use
-          effectively.
-        </p>
+        <span className="card-title">From {from}</span>
+        <p>{wish}</p>
       </div>
     </div>
   )
+}
+
+Card.propTypes = {
+  from: PropTypes.string,
+  wish: PropTypes.string
 }
 
 export default Card
