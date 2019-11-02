@@ -14,30 +14,43 @@ const AddWish = () => {
 
   const { wish, from } = message
 
+  const [errorMessage, setErrorMessage] = useState('')
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
 
   const handleChange = e => {
     setMessage({ ...message, [e.target.id]: e.target.value })
+    setErrorMessage()
   }
 
   const handleSubmit = e => {
     e.preventDefault()
     setLoading(true)
-    const db = firebase.firestore()
-    db.collection('wish').add({
-      wish,
-      from
-    }).then(res => {
+    if (!wish || !from) {
+      setErrorMessage('Please fill all the fields')
       setLoading(false)
-      console.log(res)
-      setSuccess(true)
-    }).catch(err => {
-      setLoading(false)
-      console.log(err)
-      setError(true)
-    })
+    } else {
+      const db = firebase.firestore()
+      db.collection('wish')
+        .add({
+          wish,
+          from
+        })
+        .then(() => {
+          setLoading(false)
+          setSuccess(true)
+          setMessage({
+            wish: '',
+            form: ''
+          })
+        })
+        .catch(err => {
+          setLoading(false)
+          console.log(err)
+          setError(true)
+        })
+    }
   }
 
   return (
@@ -57,7 +70,12 @@ const AddWish = () => {
           <div className="row">
             <div className="input-field col m6 s12">
               <i className="material-icons prefix">account_circle</i>
-              <input type="text" id="from" onChange={handleChange} />
+              <input
+                type="text"
+                id="from"
+                onChange={handleChange}
+                value={from || ''}
+              />
               <label htmlFor="from">Your Name</label>
             </div>
           </div>
@@ -68,12 +86,16 @@ const AddWish = () => {
                 id="wish"
                 className="materialize-textarea"
                 onChange={handleChange}
+                value={wish || ''}
               ></textarea>
               <label htmlFor="wish">Your Wish</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col m6 s12 center">
+              <h6 style={{ display: errorMessage ? '' : 'none' }} className="red-text">
+                {errorMessage}
+              </h6>
               <button
                 type="submit"
                 className="btn waves-effect waves-light purple lighten-3"
