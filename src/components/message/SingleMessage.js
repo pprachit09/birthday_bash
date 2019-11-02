@@ -17,7 +17,6 @@ const SingleMessage = ({ match }) => {
 
     docRef.get().then(doc => {
       if (doc.exists) {
-        console.log(doc.data().wish.length)
         setData({
           wish: doc.data().wish,
           from: doc.data().from
