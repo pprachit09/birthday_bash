@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Card = ({ from, wish }) => {
+const Card = ({ from, wish, singleMessage = false }) => {
   const colours = [
     'red',
     'pink',
@@ -14,13 +14,21 @@ const Card = ({ from, wish }) => {
     'amber'
   ]
   const randomColour = colours[Math.floor(Math.random() * 9)]
-  const className = `card small ${randomColour} darken-1`
+  const className = `card z-depth-0 small ${randomColour} darken-1`
+
+  const showWish = () => {
+    if (singleMessage || wish.length < 300) {
+      return <p>{wish}</p>
+    } else {
+      return <p>{wish.substring(0, 300)} .....</p>
+    }
+  }
 
   return (
     <div className={className}>
       <div className="card-content white-text">
         <span className="card-title">From {from}</span>
-        <p>{wish}</p>
+        {showWish()}
       </div>
     </div>
   )
@@ -28,7 +36,8 @@ const Card = ({ from, wish }) => {
 
 Card.propTypes = {
   from: PropTypes.string,
-  wish: PropTypes.string
+  wish: PropTypes.string,
+  singleMessage: PropTypes.bool
 }
 
 export default Card
