@@ -29,8 +29,10 @@ const SingleMessage = ({ match }) => {
     if (wish) {
       return (
         <div className="col m6 s12">
-          <Card from={from} wish={wish} singleMessage={true}/>
-          <a href="/messages" className="red-text">Back to messages</a>
+          <Card from={from} wish={wish} singleMessage={true} />
+          <a href="/messages" className="red-text">
+            Back to messages
+          </a>
         </div>
       )
     }

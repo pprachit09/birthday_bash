@@ -93,7 +93,10 @@ const AddWish = () => {
           </div>
           <div className="row">
             <div className="input-field col m6 s12 center">
-              <h6 style={{ display: errorMessage ? '' : 'none' }} className="red-text">
+              <h6
+                style={{ display: errorMessage ? '' : 'none' }}
+                className="red-text"
+              >
                 {errorMessage}
               </h6>
               <button
