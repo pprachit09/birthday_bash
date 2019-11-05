@@ -37,6 +37,9 @@ const Carousel = () => {
         <img src="/IMG-20191103-WA0005.jpg" className="responsive-img" alt="" />
       </Link>
       <Link to="#" className="carousel-item">
+        <img src="/IMG-20191105-WA0000.jpg" className="responsive-img" alt="" />
+      </Link>
+      <Link to="#" className="carousel-item">
         <img src="/IMG-20191103-WA0004.jpg" className="responsive-img" alt="" />
       </Link>
       <Link to="#" className="carousel-item">
